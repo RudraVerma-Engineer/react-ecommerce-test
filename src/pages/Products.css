@@ -1,0 +1,56 @@
+/* Filter bar layout */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    /* makes it responsive */
+    margin-top: 20px;
+}
+
+/* Search input */
+.search-input {
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background-color: #f1f5f9;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #38bdf8;
+    background-color: #e0f2fe;
+}
+
+/* Dropdowns */
+.dropdown {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f8fafc;
+    cursor: pointer;
+}
+
+/* Button (reuse yours if already defined) */
+.sync-btn {
+    padding: 10px 18px;
+    background-color: #38bdf8;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sync-btn:hover {
+    background-color: #0ea5e9;
+    color: white;
+}
+
+.cat-box{
+    display: flex;
+}
+.rate-box{
+    display: flex;
+}

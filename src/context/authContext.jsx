@@ -31,7 +31,81 @@ export function authProvider({children}){
     // } 
 
     const loginUser = (username,password)=>{
-        const registeredData = localStorage.getItem("registered");
+        const registeredData = localStorage.getItem("registeredUser");
         const registeredUser = JSON.parse(registeredData);
+
+        if(!registeredUser[username]){
+            return {
+                success:false,
+                error:"User Does not Exist, Please Signup First"
+            }
+        }
+        if(password !==registeredUser[username]){
+            return {
+                success:false,
+                error:"Entered Incorrect Password"
+            }
+        }
+        setIsAuth(true);
+        return {success:true}
     }
+    const loginAdmin = (username, password) => {
+      const registeredData = localStorage.getItem("registeredAdmin");
+      const registeredUser = JSON.parse(registeredData);
+
+      if (!registeredUser[username]) {
+        return {
+          success: false,
+          error: "User Does not Exist, Please Signup First",
+        };
+      }
+      if (password !== registeredUser[username]) {
+        return {
+          success: false,
+          error: "Entered Incorrect Password",
+        };
+      }
+      setIsAuth(true);
+      return { success: true };
+    };
+
+    const signupUser = (username,password, confirmPassword)=>{
+        if(password!=confirmPassword){
+            return {success:false, error:"Password And confirm password not match"};
+        }
+        const registeredData = localStorage.getItem("registeredUser");
+        const registeredUser = JSON.parse(registeredData) || {};
+        if (registeredUser[username]) {
+          return {
+            success: false,
+            error: "user already exists",
+          };
+        }
+        registeredUser[username] = password;
+        localStorage.setItem("registeredUser", JSON.stringify(registeredUser));
+        return { success: true };
+    }
+
+    const signupAdmin = (username, password, confirmPassword) => {
+      if (password != confirmPassword) {
+        return {
+          success: false,
+          error: "Password And confirm password not match",
+        };
+      }
+      const registeredData = localStorage.getItem("registeredAdmin");
+      const registeredUser = JSON.parse(registeredData) || {};
+      if (registeredUser[username]) {
+        return {
+          success: false,
+          error: "user already exists",
+        };
+      }
+      registeredUser[username] = password;
+      localStorage.setItem("registeredAdmin", JSON.stringify(registeredUser));
+      return { success: true };
+    };
+
+
+    return 
 }

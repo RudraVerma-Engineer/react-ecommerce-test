@@ -5,7 +5,8 @@ import "./Products.css"
 
 function Products() {
   const [searchTerm, setSearchTerm] = useState("");
-  // const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
   return (
     <div>
       <h1>Products</h1>

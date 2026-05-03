@@ -107,5 +107,9 @@ export function authProvider({children}){
     };
 
 
-    return 
+    return (
+        <AuthContext.Provider value={{loginUser, loginAdmin, signupAdmin, signupUser}}>
+          {children}
+        </AuthContext.Provider>
+      ); 
 }

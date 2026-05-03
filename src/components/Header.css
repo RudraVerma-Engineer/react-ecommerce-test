@@ -1,0 +1,47 @@
+/* Navbar Container */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e293b;
+    padding: 15px 30px;
+    color: white;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Nav List */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+/* Nav Items */
+.nav-item {
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #38bdf8;
+}
+
+/* Signup Button */
+.signup-btn {
+    background-color: #38bdf8;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.signup-btn:hover {
+    background-color: #0ea5e9;
+}
